@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Book Notes</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/myBooks.css">
+</head>
+<style>
+
+</style>
+
+<body>
+
+<section>
+   <h2>Ready To Read</h2>
+  <ul>
+    <% books.forEach(book => { %>
+      <ol><%= book.id %>. <%= book.title %> — <%= book.author %> (<%= book.year %>)</ol>
+    <% }) %>
+  </ul>
+
+</section>
+<section>
+  <footer>
+    <div class="container myfooter mt-5 mb-5 p-2">
+      <div class="row d-flex align-items-center">
+        <div class="col-10">
+        </div>
+        <div class="col-2">
+          <a href="/" class="nav-link">Back to Home</a>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+</section>
+
+
+
+</body>
+
+</html>
