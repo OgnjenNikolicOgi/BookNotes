@@ -94,7 +94,7 @@ app.post("/myBooks", async (req, res) => {
 });
 
 app.get("/myBooks", async (req, res) => {
-    console.log("GET /myBooks");
+    console.log("GET /myBooks endpoint");
     try {
         const result = await db.query("SELECT * FROM book");
         res.render("myBooks.ejs", {books: result.rows});
