@@ -140,9 +140,6 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
 
-# Database
-database
 
 # Package
 package-lock.json
-package.json
