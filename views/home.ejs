@@ -15,20 +15,8 @@
 </style>
 
 <body>
-  <header>
-    <div class="container myheader mt-2 mb-2 p-2">
-      <div class="row d-flex align-items-center">
-        <div class="col-10">
-          <h1>Book Notes<img src="/images/Book-Logo.png" class="logo ml-2" width="40px" height="40px" alt="Book Logo">
-          </h1>
-        </div>
-        <div class="col-2">
-          <a href="/myBooks" class="nav-link">My Books</a>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </header>
+
+  <%- include("partials/header.ejs") %>
 
   <section>
     <div class="container">
@@ -102,21 +90,7 @@
             <% } %>
   </section>
 
-  <footer>
-    <div class="container myfooter mt-5 mb-5 p-2">
-      <div class="row d-flex align-items-center">
-        <div class="col-10">
-          <p>
-            <%= new Date().getFullYear(); %>
-          </p>
-        </div>
-        <div class="col-2">
-          <a href="/" class="nav-link">Back to top</a>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <%- include("partials/footer.ejs") %>
 
 
 </body>

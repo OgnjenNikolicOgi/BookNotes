@@ -14,30 +14,21 @@
 
 <body>
 
+  <%- include("partials/header.ejs") %>
+
 <section>
-   <h2>Ready To Read</h2>
+  <div class="container">
+    <div class="text-center mb-5 mt-5">
+   <h2>Ready To Read:</h2>
+   </div>
   <ul>
     <% books.forEach(book => { %>
       <ol><%= book.id %>. <%= book.title %> — <%= book.author %> (<%= book.year %>)</ol>
     <% }) %>
   </ul>
+  </div>
 
-</section>
-<section>
-  <footer>
-    <div class="container myfooter mt-5 mb-5 p-2">
-      <div class="row d-flex align-items-center">
-        <div class="col-10">
-        </div>
-        <div class="col-2">
-          <a href="/" class="nav-link">Back to Home</a>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
-</section>
-
+  <%- include("partials/footer.ejs") %>
 
 
 </body>
