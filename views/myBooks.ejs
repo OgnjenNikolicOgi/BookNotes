@@ -21,12 +21,33 @@
     <div class="text-center mb-5 mt-5">
    <h2>Ready To Read:</h2>
    </div>
-  <ul>
-    <% books.forEach(book => { %>
-      <ol><%= book.id %>. <%= book.title %> — <%= book.author %> (<%= book.year %>)</ol>
-    <% }) %>
-  </ul>
+   <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID.</th>
+        <th scope="col">Title</th>
+        <th scope="col">Author</th>
+        <th scope="col">Year</th>
+        <th scope="col">Is Read?</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <% books.forEach(book => { %>
+      <tr>
+        <th scope="row"><%= book.id %></th>
+        <td><%=book.title %></td>
+        <td><%= book.author %></td>
+        <td><%= book.year %></td>
+        <td><button type="button" class="btn btn-success">Mark as Read</button></td>
+        <td><button type="button" class="btn btn-danger">Delete Book</button></td>
+      </tr>
+      <% }) %>
+    </tbody>
+   </table>
   </div>
+</section>
+
 
   <%- include("partials/footer.ejs") %>
 
