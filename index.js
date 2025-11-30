@@ -78,6 +78,19 @@ app.post("/search", async (req, res) => {
     }
 });
 
+app.post("/books/:id/set-read", async (req, res) => {
+  const bookId = req.params.id;
+  try {
+    await db.query(
+      "UPDATE book SET read=true WHERE id=" + bookId + ";"
+    );
+    res.json({ success: true });
+  } catch (error) {
+    console.log(error);
+    res.status(400).send("Something went wrong");
+  }
+});
+
 app.post("/myBooks", async (req, res) => {
   const { title, author, year } = req.body;
   try {
@@ -104,7 +117,15 @@ app.get("/myBooks", async (req, res) => {
     }
 });
 
-
+app.post("/delete", async (req, res) => {
+    const id = req.body.deleteBookById;
+    try {
+        await db.query("DELETE FROM book WHERE id = $1", [id]);
+        res.redirect("/myBooks");
+    } catch (error) {
+        res.status(400).send("Something went wrong");
+    }
+});
 
 app.listen (port, () => {
     console.log(`Server is running on port ${port}`);
