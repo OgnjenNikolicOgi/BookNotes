@@ -117,11 +117,12 @@ app.get("/myBooks", async (req, res) => {
     }
 });
 
-app.post("/delete", async (req, res) => {
-    const id = req.body.deleteBookById;
+app.post("/delete/:id", async (req, res) => {
+  console.log("POST /delete/:id");
+    const id = req.params.id;
     try {
         await db.query("DELETE FROM book WHERE id = $1", [id]);
-        res.redirect("/myBooks");
+        res.json({ success: true });    
     } catch (error) {
         res.status(400).send("Something went wrong");
     }
